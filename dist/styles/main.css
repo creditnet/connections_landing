@@ -98,6 +98,7 @@ a.underline:active {
     color: #999;
     text-shadow: 0 1px 1px rgba(0,0,0,.2);
     background: none no-repeat;
+    filter: none !important;
 }
 #relations-example-carousel .carousel-control .glyphicon-chevron-left {
     left: 12px;
@@ -115,21 +116,41 @@ a.underline:active {
     position: relative;
     padding: 40px 0 20px 0;
 }
+#order-form .form-lead {
+    text-align: left \9;
+}
 #order-form .row {
     margin-right: -5px;
     margin-left: -5px;
+}
+#order-form input {
+    border-width: 2px;
 }
 #order-form .input-col,
 #order-form .submit-col {
     padding-right: 5px;
     padding-left: 5px;
     padding-bottom: 10px;
+    max-width: 400px \9;
 }
-#order-form input {
-    border-width: 2px;
+#order-form .input-col .glyphicon {
+    top: 0;
+    display: none;
 }
-#order-form .submit-col .btn {
+#order-form .input-col.has-feedback .glyphicon {
+    display: block;
+}
+#order-form .submit-col button {
     width: 100%;
+}
+#order-form .form-pending {
+    display: none;
+}
+#order-form.has-form-pending .form-pending {
+    display: inline;
+}
+#order-form.has-form-pending .form-normal {
+    display: none;
 }
 
 #after-submit-view {
