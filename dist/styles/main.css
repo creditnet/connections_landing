@@ -156,6 +156,7 @@ a.underline:active {
 #after-submit-view {
     display: none;
     padding: 20px;
+    margin-top: 15px;
     margin-bottom: 20px;
     background-color: #fbe6c3;
 }
