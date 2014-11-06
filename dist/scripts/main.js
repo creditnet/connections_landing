@@ -7,6 +7,8 @@ $(function(){
         utm_campaign    = url.param('utm_campaign'),
         formAction      = '/help/ask/',
         formData        = {},
+        orderFormPane   = $('#order-form-pane'),
+        noOrderFormPane = $('#no-order-form-pane'),
         orderForm       = $('#order-form'),
         orderFormInputs = orderForm.find('input'),
         orderFormSubmit = orderForm.find('button'),
@@ -21,6 +23,14 @@ $(function(){
 
     // IE9- placeholder fix
     orderFormInputs.placeholder && orderFormInputs.placeholder();
+
+    // fabrikant.ru no order form hack
+    if (utm_source === 'fabrikant') {
+        orderFormPane.hide();
+        noOrderFormPane.show();
+
+        return;
+    }
 
     orderForm.submit(function(e) {
         e.preventDefault();

@@ -109,7 +109,6 @@ a.underline:active {
 
 #order-form-pane {
     margin: 20px 0;
-    border-top: 1px solid #ccc;
     background-color: #ffc76b;
 }
 #order-form {
@@ -150,6 +149,10 @@ a.underline:active {
     display: inline;
 }
 #order-form.has-form-pending .form-normal {
+    display: none;
+}
+
+#no-order-form-pane {
     display: none;
 }
 
