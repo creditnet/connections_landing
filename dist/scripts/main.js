@@ -25,12 +25,12 @@ $(function(){
     orderFormInputs.placeholder && orderFormInputs.placeholder();
 
     // fabrikant.ru no order form hack
-    if (utm_source === 'fabrikant') {
-        orderFormPane.hide();
-        noOrderFormPane.show();
-
-        return;
-    }
+    // if (utm_source === 'fabrikant') {
+    //     orderFormPane.hide();
+    //     noOrderFormPane.show();
+    //
+    //     return;
+    // }
 
     orderForm.submit(function(e) {
         e.preventDefault();
