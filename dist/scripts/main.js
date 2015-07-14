@@ -1,28 +1,38 @@
 'use strict';
 
 $(function(){
-    var url             = purl(),
-        utm_source      = url.param('utm_source'),
-        utm_medium      = url.param('utm_medium'),
-        utm_campaign    = url.param('utm_campaign'),
-        formAction      = '/help/ask/',
-        formData        = {},
-        orderFormPane   = $('#order-form-pane'),
-        noOrderFormPane = $('#no-order-form-pane'),
-        orderForm       = $('#order-form'),
-        orderFormInputs = orderForm.find('input'),
-        orderFormSubmit = orderForm.find('button'),
-        promoView       = $('#promo-view'),
-        afterSubmitView = $('#after-submit-view'),
-        pendingClass    = 'has-form-pending',
-        errorClass      = 'has-feedback has-error',
-        email           = 'connections@creditnet.ru',
-        fadeDuration    = 250;
+    var url                 = purl(),
+        utm_source          = url.param('utm_source'),
+        utm_medium          = url.param('utm_medium'),
+        utm_campaign        = url.param('utm_campaign'),
+        creditnetLinkParams = '?utm_source=nkb&utm_medium=link&utm_campaign=nkb_connections_landing' + (utm_campaign ? '&utm_content=' + utm_campaign : ''),
+        formAction          = '/help/ask/',
+        formData            = {},
+        orderFormPane       = $('#order-form-pane'),
+        noOrderFormPane     = $('#no-order-form-pane'),
+        orderForm           = $('#order-form'),
+        orderFormInputs     = orderForm.find('input'),
+        orderFormSubmit     = orderForm.find('button'),
+        promoView           = $('#promo-view'),
+        afterSubmitView     = $('#after-submit-view'),
+        pendingClass        = 'has-form-pending',
+        errorClass          = 'has-feedback has-error',
+        email               = 'connections@creditnet.ru',
+        fadeDuration        = 250;
 
     reset();
 
     // IE9- placeholder fix
     orderFormInputs.placeholder && orderFormInputs.placeholder();
+
+    // creditnet links
+    $('a.creditnet-link').each(function(){
+        var link    = $(this),
+            href    = link.attr('href');
+
+        link.attr('href', href + creditnetLinkParams);
+    });
+
 
     // fabrikant.ru no order form hack
     // if (utm_source === 'fabrikant') {
