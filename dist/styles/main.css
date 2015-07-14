@@ -31,7 +31,14 @@ a.underline:active {
 
 .header {
     height: 65px;
-    background: no-repeat 0 20px url("./i/nkb-logo_ru.png?1");
+}
+.header .logo {
+    display: block;
+    position: absolute;
+    width: 196px;
+    height: 42px;
+    top: 20px;
+    background: no-repeat url("./i/nkb-logo_ru.png?1");
 }
 
 .footer {
